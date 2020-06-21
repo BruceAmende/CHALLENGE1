@@ -2,7 +2,7 @@
 
 <?php
 //Hoogste aantal minuten te laat gebruik voor het resultaat de alias 'statistiek' in je query
-$sqlHoogste = "SELECT...";
+$sqlHoogste = "SELECT MAX(aantal_minuten) AS statistiek FROM te_laat;";
 $hoogste = haalStatistiek($sqlHoogste);
 
 //Gemiddeld aantal minuten te laat gebruik voor het resultaat de alias 'statistiek' in je query
