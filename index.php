@@ -22,21 +22,23 @@ require('include/functions.php');
             foreach ($students as $student) { ?>
                 <tr>
                     <td>
-                        
+                        <?php echo $student['naam_student'];  ?>
                     </td>
                     <td>
-                        
+                    <?php echo $student['klas'];  ?>
                     </td>
+                    <td>
                     <?php
                     // <td> Als een student meer dan 30 minuten te laat komt moet de cel de class 'ergtelaat' krijgen. Anders is de class 'telaat'
-
+                     echo $student['aantal_minuten'];  
                     ?>
+                    </td>
                    
+                    <td>
+                    <?php echo $student['reden_student'];  ?>
                     </td>
                     <td>
-                        
-                    </td>
-                    <td>Verwijderknop</td>
+                    <button class="btn btn-danger" onclick="voerUit()">Verwijder</button></td>
                 </tr>
             <?php
             } // einde foreach 
