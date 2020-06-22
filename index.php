@@ -2,6 +2,7 @@
 include('include/header.php');
 require('include/functions.php');
 
+
 ?>
 
 <body>
@@ -23,10 +24,10 @@ require('include/functions.php');
             foreach ($students as $student) { ?>
                 <tr>
                     <td >
-                        <?php echo $student['naam_student'];  ?>
+                        <?php $id = $student['id']; echo $student['naam_student'];  ?>
                     </td>
                     <td>
-                    <?php echo $student['klas'];  ?>
+                    <?php echo $student['klas'];   ?>
                     </td>
                     <td  style="color:white;" class="<?php if($student['aantal_minuten'] > 30) { echo 'ergtelaat'; } ?>"> 
                     <?php
@@ -37,12 +38,12 @@ require('include/functions.php');
                      echo $student['aantal_minuten'];  
                     ?>
                     </td>
-                   
+                        
                     <td>
                     <?php echo $student['reden_student'];  ?>
                     </td>
                     <td>
-                    <a   class="btn btn-danger">Verwijder</a></td>
+                    <a href="verwijder.php?id=<?php echo $student['id']; ?>"  class="btn btn-danger">Verwijder</a></td>
                 </tr>
             <?php
             } // einde foreach 
@@ -80,7 +81,7 @@ require('include/functions.php');
         </tr>
         <tr>
             <td>Gemiddeld aantal minuten</td>
-            <td><?php echo $gemiddeld; ?></td>
+            <td><?php echo $gemiddeld;  ?></td>
         </tr>
         <tr>
             <td>Totaal aantal minuten</td>
@@ -93,6 +94,8 @@ require('include/functions.php');
             <br>
             <br>
             <br>
+
+            
 
 
 
